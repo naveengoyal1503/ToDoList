@@ -13,6 +13,17 @@
             color: red;
             
         }
+        .title1 {
+            width: 200px;
+            height: 100%;
+        }
+        .des{
+            width: 600px;
+            height: 100%;
+        }
+        .size{
+            width: 100px;
+        }
     </style>
 </head>
 
@@ -47,7 +58,7 @@
                     <tr>
                         <th scope="row">1</th>
                         <td>Get some Coffee</td>
-                        <td>You need coffee as you are a coder</td>
+                        <td>You need coffee as you are a coder </td>
                         <td><button class="btn btn-sm btn-primary">Delete</button></td>
                     </tr>
 
@@ -88,10 +99,10 @@
             itemJsonArray.forEach((element, index) => {
                 str += `
                     <tr>
-                    <th scope="row">${index + 1}</th>
-                    <td>${element[0]}</td>
-                    <td>${element[1]}</td> 
-                    <td><button class="btn btn-sm btn-primary" onclick="deleted(${index})">Delete</button></td> 
+                    <th scope="row" class="size">${index + 1}</th>
+                    <td class="title1">${element[0]}</td>
+                    <td class="des">${element[1]}</td> 
+                    <td class="size"><button class="btn btn-sm btn-primary" onclick="deleted(${index})">Delete</button></td> 
                     </tr>`;
             });
             tableBody.innerHTML = str;
