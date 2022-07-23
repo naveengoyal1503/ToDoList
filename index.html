@@ -18,6 +18,7 @@
             word-break: break-word;
             overflow: hidden;
             text-overflow: ellipsis;
+            max-width: 512px;
             line-height: 16px;
             max-height: 32px;
             -webkit-line-clamp: 10;
@@ -28,15 +29,16 @@
             word-break: break-word;
             overflow: hidden;
             text-overflow: ellipsis;
+            max-width: 512px;
             line-height: 16px;
             max-height: 32px;
             -webkit-line-clamp: 10;
             -webkit-box-orient: vertical;
         }
 
-        .size {
+        /* .size {
             width: 100px;
-        }
+        } */
     </style>
 </head>
 
@@ -58,7 +60,7 @@
         </div>
         <button id="add" class="btn btn-primary">Add to list</button>
         <button id="clear" class="btn btn-primary" onclick="clearStorage()">Clear list</button>
-        <div id="items" class="m-4">
+        <div id="items" class="col-md-12">
             <h2 class="text-center">Your Items</h2>
             <table class="table">
                 <thead>
@@ -114,10 +116,10 @@
             itemJsonArray.forEach((element, index) => {
                 str += `
                     <tr>
-                    <th  class="size">${index + 1}</th>
+                    <th >${index + 1}</th>
                     <td class="title1">${element[0]}</td>
                     <td class="des">${element[1]}</td> 
-                    <td class="size"><button class="btn btn-sm btn-primary" onclick="deleted(${index})">Delete</button></td> 
+                    <td ><button class="btn btn-sm btn-primary" onclick="deleted(${index})">Delete</button></td> 
                     </tr>`;
             });
             tableBody.innerHTML = str;
